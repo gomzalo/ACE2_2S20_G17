@@ -1,0 +1,17 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongodb": {
+    "host": "cluster0-j60fu.mongodb.net",
+    "port": 27017,
+    "url": "mongodb+srv://Josue:admin@cluster0-j60fu.mongodb.net/test?retryWrites=true&w=majority",
+    "database": "Api_DB",
+    "password": "admin",
+    "name": "mongodb",
+    "user": "Josue",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  }
+}

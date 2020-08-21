@@ -1,0 +1,30 @@
+{
+  "name": "datos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "peso": {
+      "type": "number",
+      "required": true
+    },
+    "objeto": {
+      "type": "number",
+      "required": true
+    },
+    "nivel": {
+      "type": "number",
+      "required": true
+    },
+    "fecha": {
+      "type": "date",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
