@@ -30,7 +30,7 @@ void loop() {
   // ###############################  WIFI   ###############################
   if (WiFi.status() == WL_CONNECTED)
   { //Check WiFi connection status
-    if (Serial.available() > 0)
+    if (Serial.available())
     {
       String datos = Serial.readString();
       //Serial.print("Los datos recibidos son");
