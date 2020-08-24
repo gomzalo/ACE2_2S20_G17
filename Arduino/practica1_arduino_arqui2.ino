@@ -108,9 +108,11 @@ void loop() {
         Serial.println(peso);
         Serial.println("Objeto: 1");
         Serial.print("Nivel de liquido: ");
-        Serial.println(nivel);      
-        Serial.write(peso);
-        Serial.write(nivel);
+        Serial.println(nivel); 
+        string cadena+peso;
+        cadena+=',';
+        cadena+=nivel;
+      Serial.print(nivel);
         delay(1000);
       }
     }   
