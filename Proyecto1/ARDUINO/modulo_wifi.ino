@@ -1,5 +1,5 @@
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-// ::::::::::::::::::::::::::::::::: PRACTICA 1 :::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::: PROYECTO1 :::::::::::::::::::::::::::::::::
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #include <ESP8266HTTPClient.h>
 #include <ESP8266WiFi.h>
@@ -8,10 +8,11 @@
 const char* ssid = "Arqui2";
 const char* password = "12345678";
 float peso;
-int nivel;
+int obstaculos;
+int ubicacion;
+int estado;
 
-float peso2;
-int nivel2;
+
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 // ********************************      S E T U P      ********************************
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -52,10 +53,22 @@ void loop() {
                 break;
               }
             case 1: {
-                nivel = val.toInt();
+                obstaculos = val.toInt();
                 val = "";
                 break;
               }            
+
+             case 2: {
+                estado = val.toInt();
+                val = "";
+                break;
+              }    
+
+              case 3: {
+                ubicacion = val.toInt();
+                val = "";
+                break;
+              }    
           }
           cont++;
         }
@@ -87,8 +100,9 @@ void enviar() {
   JsonObject& JSONencoder = JSONbuffer.createObject();
   // |||||||||||||  Estructura de JSON  |||||||||||||
   JSONencoder["peso"] = peso;
-  JSONencoder["objeto"] = "1";
-  JSONencoder["nivel"] = nivel;
+  JSONencoder["obstaculos"] = obstaculos;
+  JSONencoder["estado"] = estado;
+  JSONencoder["ubicacion"] = ubicacion;
 
   char JSONmessageBuffer[200];
   JSONencoder.prettyPrintTo(JSONmessageBuffer, sizeof(JSONmessageBuffer));
@@ -96,7 +110,7 @@ void enviar() {
 
   HTTPClient http;    //Declare object of class HTTPClient
 
-  http.begin("http://p1ace2.herokuapp.com/api/datos");      //Specify request destination
+  http.begin("https://api-p1-ace2.herokuapp.com/api/datos95carro");      //Specify request destination  
   http.addHeader("Content-Type", "application/json");  //Specify content-type header
   int httpCode = http.POST(JSONmessageBuffer);   //Send the request
   String payload = http.getString();            //Get the response payload
