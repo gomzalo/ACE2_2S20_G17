@@ -1,0 +1,34 @@
+{
+  "name": "datos_carro",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "peso": {
+      "type": "number",
+      "required": true
+    },
+    "fechahora": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "obstaculos": {
+      "type": "number",
+      "required": true
+    },
+    "cant_objetos": {
+      "type": "number",
+      "required": true
+    },
+    "estadoviaje": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
