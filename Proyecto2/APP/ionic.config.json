@@ -1,0 +1,7 @@
+{
+  "name": "ace2_2p_g17",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}

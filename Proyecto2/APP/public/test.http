@@ -1,0 +1,19 @@
+
+// :::::::::::::::::::::::::::::::::::::::::::::::		TEMPERATURA		 :::::::::::::::::::::::::::::::::::::::::::::::
+
+###
+
+POST https://apirestp2ace2.herokuapp.com/temperatura HTTP/1.1
+content-type: application/json
+
+
+{
+	"temperatura":35
+}
+
+###
+
+GET https://apirestp2ace2.herokuapp.com/temperatura HTTP/1.1
+content-type: application/json
+
+// :::::::::::::::::::::::::::::::::::::::::::::::		TIEMPO		 :::::::::::::::::::::::::::::::::::::::::::::::
